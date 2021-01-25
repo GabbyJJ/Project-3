@@ -1,8 +1,8 @@
-let name = document.getElementById("name");
+var name = document.getElementById("name");
 name.focus();
 
-let jobRole = document.getElementById("title");
-let otherJobRole = document.getElementById("other-job-role");
+var jobRole = document.getElementById("title");
+var otherJobRole = document.getElementById("other-job-role");
 
 otherJobRole.style.display = "none";
 
@@ -15,18 +15,18 @@ jobRole.addEventListener("change", (e) => {
   }
 });
 
-let design = document.querySelector("#design");
-let color = document.querySelector("#color");
-let shirtColor = document.querySelector("#shirt-colors");
+var design = document.querySelector("#design");
+var color = document.querySelector("#color");
+var shirtColor = document.querySelector("#shirt-colors");
 shirtColor.hidden = true;
 
 //To prevent users from selecting an invalid color for a particular theme, the "Color" menu should be disabled by default.
 
 design.addEventListener("change", (event) => {
-  let design = event.target.value;
+  var design = event.target.value;
   shirtColor.hidden = false;
 
-  for (let i = 0; i < color.options.length; i++) {
+  for (var i = 0; i < color.options.length; i++) {
     if (design === color.options[i].getAttribute("data-theme")) {
       color.options[i].hidden = false;
       color.options[i].disabled = false;
@@ -36,10 +36,10 @@ design.addEventListener("change", (event) => {
     }
   }
 });
-let registerForActivities = document.querySelector("#activities");
-let total = document.querySelector("#activities-cost");
-let totalcostofactivites = 0;
-let registerForActivitiesBox = document.querySelector("#activities-box");
+var registerForActivities = document.querySelector("#activities");
+var total = document.querySelector("#activities-cost");
+var totalcostofactivites = 0;
+var registerForActivitiesBox = document.querySelector("#activities-box");
 
 registerForActivities.addEventListener("change", (event) => {
   var dataCost = event.target.getAttribute("data-cost");
@@ -177,7 +177,7 @@ function invalidInput(element) {
 }
 
 //This focuses what you are working on
-for (let i = 0; i < activities.length; i++) {
+for (var i = 0; i < activities.length; i++) {
   activities[i].addEventListener("focus", (event) => {
     event.target.parentNode.classList.add("focus");
   });
