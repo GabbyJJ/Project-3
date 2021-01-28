@@ -1,4 +1,4 @@
-const name = document.getElementById("name");
+let name = document.getElementById("name");
 name.focus();
 
 var jobRole = document.getElementById("title");
