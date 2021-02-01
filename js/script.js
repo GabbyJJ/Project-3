@@ -27,15 +27,25 @@ design.addEventListener("change", (event) => {
   shirtColor.hidden = false;
 
   for (var i = 0; i < color.options.length; i++) {
-    if (design === color.options[i].getAttribute("data-theme")) {
+    let value = event.target.value;
+    let design = color.options[i].getAttribute("data-theme");
+
+    if (value === design) {
       color.options[i].hidden = false;
       color.options[i].disabled = false;
     } else {
       color.options[i].hidden = true;
       color.options[i].disabled = true;
+      color.selectedIndex = 0;
     }
   }
 });
+// color.options[i].hidden = false;
+// color.options[i].disabled = false;
+// } else {
+//  color.options[i].hidden = true;
+//  color.options[i].disabled = true;
+/// };
 var registerForActivities = document.querySelector("#activities");
 var total = document.querySelector("#activities-cost");
 var totalcostofactivites = 0;
